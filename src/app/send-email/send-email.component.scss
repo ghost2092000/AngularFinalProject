@@ -1,0 +1,67 @@
+// buttons
+button{
+    border-radius: 10px;
+}
+
+.cancel{
+    background-color: rgb(250, 106, 106)
+}
+
+.send{
+    background-color: rgb(81, 173, 235)
+}
+
+form{box-shadow: 5px 5px 9px grey;
+}
+
+.form-control{
+    max-width: 100%;
+    display: flex;
+}
+
+.buttonDiv{
+    margin: 20px;
+
+}
+
+.buton{
+    height: 5vh;
+    width: 80px;
+}
+.warn{
+    font-size: 10px;
+    color: red;
+}
+
+span{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+form-group{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+label{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.caja{
+    height: 5vh; 
+    margin-bottom: 5vh;
+}
+
+.caja2{
+    height: 5vh; 
+    margin-top: 10vh;
+}
+
+.heading{
+    width: 100%;
+}
+
+.signupp{
+    color:rgb(113, 113, 255);
+}

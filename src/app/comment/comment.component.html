@@ -1,0 +1,42 @@
+<div (click)="onClick()" class="container">
+
+
+
+
+
+        <div *ngFor="let emaill of message; let i = index">
+
+
+        <div *ngIf="show === i"><i class="fas fa-circle fa-xs"></i></div>
+
+
+        
+
+        <div  class = "mw-100 " id="c" style="border-radius: 10px;" >
+
+        <div style = "display: flex; justify-content: space-between; padding-top: 10px;
+        padding-left: 15px; padding-right: 15px; padding-bottom:0;
+        ">
+          <!--Name-->
+          <p>{{ emaill.name }}</p>
+          <!--Date-->
+          <p>{{ emaill.date }}</p>
+        </div>
+
+        <div style = "padding-left: 15px; padding-top: 0;">
+         <!--Subject-->
+         <!-- <i class="fa fa-circle" aria-hidden="true" style= "color: blue;"></i> -->
+         <p>{{ emaill.subject}}</p> 
+        </div>
+
+        <div style = "padding-left: 15px; padding-top: 0;">
+            <!--Comments-->
+            <p>{{ emaill.comment}}</p>
+        </div>
+
+        </div>
+        </div>
+
+    </div>
+<!-- I added this to pass from childToParent -->
+    <!-- <button class=“button” (click) = "sendMessage()"  style= "border: 20px solid rgb(128, 154, 240);"> Send Messageeeee!! </button> -->

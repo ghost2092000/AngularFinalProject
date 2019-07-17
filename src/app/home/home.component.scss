@@ -1,0 +1,22 @@
+.textONimage{
+   
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+     
+}
+
+.log{
+    border-radius: 20px;
+    background-color: #2fbdff;
+    border:  #2fbdff;
+    width: 70px;
+}
+
+.logbox{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

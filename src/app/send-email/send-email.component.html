@@ -1,0 +1,132 @@
+<app-roogle></app-roogle> 
+<div class="form-box d-flex justify-content-center align-items-center container-fluid row" style="border: 3px solid goldenrod; width: 100vw; height: 100vh; margin: 0; padding: 0;">
+ 
+
+    <form 
+    [formGroup] = "signupForm" 
+    (ngSubmit)="OnSubmit()" 
+    class = " col-6 col-sm-5 col-md-4 col-lg-3 " 
+    style="border: 3px solid red; width: 70vw; height: 85vh;"
+    >
+  
+  
+    <h1 class = "heading" style= "text-align: center">Message</h1>  
+    
+  
+    <!-- <Subject> -->
+    <div>
+  
+    <div class="form-group caja" >
+  
+      <div>
+      <label class = "sub" for="subject" > Subject </label>
+      </div>
+  
+      <div class= "d-flex justify-content-center">
+      <input type="text"
+      formControlName= "subject"
+      id= "subject"
+      class= "form-control"
+  
+      [style.background-color]= "(!signupForm.get('subject').valid && signupForm.get('subject').touched) ? 'rgb(255, 182, 182)' : '' "
+      >
+      </div>
+  
+      <div class= "d-flex justify-content-center">
+      <span *ngIf = "!signupForm.get('subject').valid && signupForm.get('subject').touched"
+          class = "form-text text muted warn">
+              Please Enter a Subject
+          </span>
+      </div>
+    
+    </div>
+  
+  
+    <!-- <To> -->
+    <div class="form-group caja" >
+      <label for="email"> To </label> 
+      <input type="email"
+      formControlName= "email"
+      id="email"
+      class= "form-control"
+      
+      [style.background-color]= "(!signupForm.get('email').valid && signupForm.get('email').touched) ? 'rgb(255, 182, 182)' : '' "
+      >
+  
+      <div class= "d-flex justify-content-center">
+      <span *ngIf = "!signupForm.get('email').valid && signupForm.get('email').touched"
+          class = "form-text text muted warn">
+              Please Enter an Email
+          </span>
+        </div>
+    </div>
+  
+  
+  
+    <!-- <CC> -->
+    <div class="form-group caja">
+      <label for="cc" > CC </label>
+      <input type="email"
+      formControlName= "cc"
+      id="cc"
+      class= "form-control">
+    </div>
+  
+  
+  
+    <!-- <BCC> -->
+    <div class="form-group caja">
+      <label for="bcc" > BCC </label>
+      <input type="email"
+      formControlName= "bcc"
+      id="bcc"
+      class= "form-control">
+    </div>
+  
+  
+    <!-- <Body> -->
+    <div class="form-group caja">
+      <label for="subject" > Body </label>
+  
+      <textarea rows="2" cols="50"
+      formControlName= "subject"
+      id= "subject"
+      class= "form-control">
+    </textarea>
+  
+    </div>
+  
+  
+    <!-- <Hyperlinks> -->
+    <div class="form-group caja2 caja">
+      <label for="subject" > Hyperlinks </label>
+      <input type="text"
+      formControlName= "subject"
+      id= "subject"
+      class= "form-control">
+    </div>
+    
+  
+  
+   <!-- <Buttons> --> 
+    <div class="row buttonDiv caja2">
+  
+    <div class="col-6 d-flex justify-content-center ">
+        <a routerLink= "/Profile">
+        <button class = "cancel buton">Cancel</button>
+        </a>
+    </div>
+    <div class="col-6 d-flex justify-content-center ">
+      <button class = "send buton" type= "submit" 
+      [disabled] = "!signupForm.valid" >Send</button>
+    </div>
+  
+  
+  
+  </div>
+  </div>
+  
+  
+    </form>
+  
+  </div>

@@ -1,0 +1,115 @@
+<app-roogle></app-roogle> 
+<div class="form-box d-flex justify-content-center align-items-center container-fluid row" style="border: 3px solid goldenrod; width: 100vw; height: 100vh; margin: 0; padding: 0;">
+ 
+
+    <form 
+    [formGroup] = "signupForm" 
+    (ngSubmit)="OnSubmit()" 
+    class = " col-6 col-sm-5 col-md-4 col-lg-3 " 
+    style="border: 3px solid red; width: 70vw; height: 70vh;"
+    >
+  
+  
+    <h1 class = "heading" style= "text-align: center">Sign Up</h1>  
+    
+  
+    <!-- <Email> -->
+    <div class="form-group caja" >
+      <label for="email"> Email </label> 
+      <input type="email"
+      formControlName= "email"
+      id="email"
+      class= "form-control"
+      
+      [style.background-color]= "(!signupForm.get('email').valid && signupForm.get('email').touched) ? 'rgb(255, 182, 182)' : '' "
+      >
+  
+      <div class= "d-flex justify-content-center">
+      <span *ngIf = "!signupForm.get('email').valid && signupForm.get('email').touched"
+          class = "form-text text muted warn">
+              Please Enter an Email
+          </span>
+        </div>
+    </div>
+  
+   <!-- <Password> -->
+    <div class="form-group caja" >
+      <label for="password"> Password </label> 
+      <input type="password"
+      formControlName= "password"
+      id="password"
+      class= "form-control"
+      
+      [style.background-color]= "(!signupForm.get('password').valid && signupForm.get('password').touched) ? 'rgb(255, 182, 182)' : '' "
+      >
+  
+      <div class= "d-flex justify-content-center">
+      <span *ngIf = "!signupForm.get('password').valid && signupForm.get('password').touched"
+          class = "form-text text muted warn">
+              Please Enter an Password
+          </span>
+        </div>
+    </div>
+  
+     <!-- <Retype Password> -->
+      <div class="form-group caja" >
+        <label for="password2"> Retype Password </label> 
+        <input type="password"
+        formControlName= "password2"
+        id="password2"
+        class= "form-control"
+        
+        [style.background-color]= "(!signupForm.get('password2').valid && signupForm.get('password2').touched) ? 'rgb(255, 182, 182)' : '' "
+        >
+    
+        <div class= "d-flex justify-content-center">
+        <span *ngIf = "!signupForm.get('password2').valid && signupForm.get('password2').touched"
+            class = "form-text text muted warn">
+                Please Retype the Password
+            </span>
+          </div>
+      </div>
+
+      <!-- <Name> -->
+        <div class="form-group caja" >
+          <label for="name"> Enter your Name </label> 
+          <input type="text"
+          formControlName= "name"
+          id="name"
+          class= "form-control"
+          
+          [style.background-color]= "(!signupForm.get('name').valid && signupForm.get('name').touched) ? 'rgb(255, 182, 182)' : '' "
+          >
+      
+          <div class= "d-flex justify-content-center">
+          <span *ngIf = "!signupForm.get('name').valid && signupForm.get('name').touched"
+              class = "form-text text muted warn">
+                  Please Enter your Name
+              </span>
+            </div>
+        </div>
+    
+    
+  
+  
+   <!-- <Buttons> --> 
+    <div class="row buttonDiv caja2">
+  
+        <div class="col-6 d-flex justify-content-center ">
+            <a routerLink= "/" ><button class = "cancel buton"> Cancel </button></a>
+        </div>
+  
+        <div class="col-6 d-flex justify-content-center ">
+            <a routerLink= "/Profile" ><button class = "send buton" type= "submit" 
+          [disabled] = "!signupForm.valid" >Sumbit</button>
+          </a>
+        </div>
+  
+  
+  
+  </div>
+  
+  
+    </form>
+  
+  </div>
