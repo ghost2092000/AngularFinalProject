@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RoogleComponent } from './roogle/roogle.component';
 import { CommentComponent } from './comment/comment.component';
 import { InboxComponent } from './inbox/inbox.component';
+import { Roogle2Component } from './roogle2/roogle2.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InboxComponent } from './inbox/inbox.component';
     ProfileComponent,
     RoogleComponent,
     CommentComponent,
-    InboxComponent
+    InboxComponent,
+    Roogle2Component
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,8 @@ import { InboxComponent } from './inbox/inbox.component';
       {path:'SendEmail', component: SendEmailComponent},
       {path:'Login', component: LoginComponent},
       {path:'Profile', component: ProfileComponent},
+      {path:'Home2', component: Roogle2Component},
+
 
 
 
