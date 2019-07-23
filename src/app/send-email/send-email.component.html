@@ -1,12 +1,11 @@
-<app-roogle></app-roogle> 
-<div class="form-box d-flex justify-content-center align-items-center container-fluid row" style="border: 3px solid goldenrod; width: 100vw; height: 100vh; margin: 0; padding: 0;">
+<div class="form-box d-flex justify-content-center align-items-center container-fluid row" style=" width: 100vw; height: 100vh; margin: 0; padding: 0; background-color: #494949">
  
 
     <form 
     [formGroup] = "signupForm" 
     (ngSubmit)="OnSubmit()" 
     class = " col-6 col-sm-5 col-md-4 col-lg-3 " 
-    style="border: 3px solid red; width: 70vw; height: 85vh;"
+    style=" width: 70vw; height: 85vh; background-color: #005A75"
     >
   
   
@@ -26,9 +25,9 @@
       <input type="text"
       formControlName= "subject"
       id= "subject"
-      class= "form-control"
-  
-      [style.background-color]= "(!signupForm.get('subject').valid && signupForm.get('subject').touched) ? 'rgb(255, 182, 182)' : '' "
+      class= "form-control txt"
+      [style.background-color]= "(!signupForm.get('subject').valid && signupForm.get('subject').touched) ? 'rgb(255, 182, 182)' : 'rgb(0, 140, 183)' "
+s
       >
       </div>
   
@@ -48,9 +47,9 @@
       <input type="email"
       formControlName= "email"
       id="email"
-      class= "form-control"
+      class= "form-control txt"
       
-      [style.background-color]= "(!signupForm.get('email').valid && signupForm.get('email').touched) ? 'rgb(255, 182, 182)' : '' "
+      [style.background-color]= "(!signupForm.get('email').valid && signupForm.get('email').touched) ? 'rgb(255, 182, 182)' : 'rgb(0, 140, 183)' "
       >
   
       <div class= "d-flex justify-content-center">
@@ -69,7 +68,8 @@
       <input type="email"
       formControlName= "cc"
       id="cc"
-      class= "form-control">
+      class= "form-control txt"
+            >
     </div>
   
   
@@ -80,7 +80,7 @@
       <input type="email"
       formControlName= "bcc"
       id="bcc"
-      class= "form-control">
+      class= "form-control txt">
     </div>
   
   
@@ -91,7 +91,7 @@
       <textarea rows="2" cols="50"
       formControlName= "subject"
       id= "subject"
-      class= "form-control">
+      class= "form-control txt">
     </textarea>
   
     </div>
@@ -103,7 +103,7 @@
       <input type="text"
       formControlName= "subject"
       id= "subject"
-      class= "form-control">
+      class= "form-control txt">
     </div>
     
   

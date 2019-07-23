@@ -3,17 +3,17 @@
   
         <div class="row" style=" height: 100%; display: fixed;">
       
-          <div class="col-4 " style=" background-color: rgb(73, 73, 73); display: fixed">
+          <div class="col-4 " style=" background-color: rgb(73, 73, 73); display: fixed;  ">
                
       
     
     
                   
-                <div class="row" id = "tron" style=" height: 15%;  display: fixed">
+                <div class="row" id = "tron" style=" height: 15%;  display: fixed;" >
                   
                   <div class="container-fluid" style=" background-color: rgb(99, 99, 99); ">
                   
-                      <div class="row" style=" height: 100%; ">
+                      <div class="row" style=" height: 100%;">
                       
     
                           <div class="col-3 d-flex align-items-center justify-content-center" >
@@ -31,50 +31,20 @@
                       </div>
                   
                   </div>
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
                 </div>
     
     
+          <div class = "sectionn" >
+            
+              <!-- <app-profile-menu></app-profile-menu> -->
+              <router-outlet>  </router-outlet>
+
     
-                <div class="row d-flex align-items-center justify-content-center" style=" height: 10%;">
-                        <a routerLink= "/SendEmail" ><button id = "boton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> new inbox</button></a>
-                </div>
-    
-    
-              
-                <div class="row" style=" height: 30%; ">
-                    
-    
-                    <div class="col " >
-    
-                        <div class="row "  >
-                          <button class="fa fa-caret-square-o-down w-100" (click)="goo()" aria-hidden="true" style="text-align: left; border: 2px solid rgb(99, 99, 99); background-color: rgb(99, 99, 99)">  inbox </button>
-                        </div>
-                       
-    
-    
-    
-                        <app-inbox id = "redd" 
-                            style= "
-                            margin:0 0;
-                            padding: 0 0; 
-                            display: none;
-                            "></app-inbox>
-    
-                    </div>
-    
-    
-                </div>
-    
-               
+          </div>
+
+
           </div>
     
     
@@ -103,7 +73,8 @@
               <div class= "row overflow-auto " style = " height: 95%; display: fixed; background-color: rgb(37, 40, 49);" > 
               
               <div>
-              <app-comment [message]="email" (messageEvent) = receiveMessage($event)> 
+              <app-comment 
+              [message]="email" (messageEvent) = receiveMessage($event)> 
               </app-comment>
               </div>  
     
@@ -128,50 +99,3 @@
     
     
     
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"    >
-      <div class="modal-dialog-center modal-dialog" role="document" style=" display: flex; justify-content: center; align-content: center; margin: 0 auto; 
-      ">
-        <div class="modal-content" style="border: 7px solid rgb(53, 97, 100); width: 100%; display: flex; justify-content: center; align-content: center; background-color: lightslategray">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-    
-            <div class="d-flex justify-content-between">
-    
-              <div id="questions">  
-              <p>Name</p>  
-              <input #namee namee.value='' >
-              </div>  
-    
-              <div id="questions">
-              <p >Date</p>
-              <input #yearr yearr.value='' >
-              </div>    
-                  
-              </div>
-    
-    
-              <div id="questions">
-              <p>Subject</p>
-              <input #subjectt subjectt.value='' >
-              </div>
-    
-              <div id="questions">
-              <p>Comment</p>
-              <textarea #commentt commentt.value='' style="height:200px; font-size:14pt; text-align:left;  "></textarea>
-              </div>
-    
-    
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="addEmail(namee.value, yearr.value,subjectt.value,commentt.value )" data-dismiss="modal">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>

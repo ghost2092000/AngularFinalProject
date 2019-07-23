@@ -28,6 +28,13 @@ form{box-shadow: 5px 5px 9px grey;
     height: 5vh;
     width: 80px;
 }
+
+.buton:hover{
+    text-decoration: underline;
+    opacity: .9;
+}
+
+
 .warn{
     font-size: 10px;
     color: red;
