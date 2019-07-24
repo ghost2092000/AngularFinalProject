@@ -4,42 +4,31 @@ import { ReactiveFormsModule} from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router'
 
 import { AppComponent } from './app.component';
-import { SendEmailComponent } from './send-email/send-email.component';
-import { LoginComponent } from './login/login.component';
-// import { SignUpComponent } from './sign-up/sign-up.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { RoogleComponent } from './roogle/roogle.component';
-import { CommentComponent } from './comment/comment.component';
-import { InboxComponent } from './inbox/inbox.component';
-import { Roogle2Component } from './roogle2/roogle2.component';
-import { ProfileMENUComponent } from './profile-menu/profile-menu.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent, 
-    data:{
-      title: 'Home page!'
-    } 
+  {path:'', 
+  loadChildren: () => import('./home/home.module') .then(m => m.HomeModule)
   },
+
   {path:'SignUp',   
   loadChildren: () => import('./sign-up/sign-up.module') .then(m => m.SignUpModule)
   },
-  {path:'Login', component: LoginComponent},
-  {path:'Profile', component: ProfileComponent,
-    children: [
-      {path:'', component: ProfileMENUComponent},
-      {path:'Send', component: SendEmailComponent}
-    ]
-  },
-  {path:'Home2', component: Roogle2Component,
-  data:{
-    title: 'Home page!'
-  } 
 
+  {path:'Login',   
+  loadChildren: () => import('./login/login.module') .then(m => m.LoginModule),
+  
+},
+  {path:'Profile', 
+  loadChildren: () => import('./profile/profile.module') .then(m => m.ProfileModule),
+    
   },
-  {path:'Send', component: SendEmailComponent,data:{
-    title: 'Email'
-  } 
+
+  {path:'Home2',
+  loadChildren: () => import('./roogle2/roogle2.module') .then(m => m.Roogle2Module)
+  },
+
+  {path:'Email',
+  loadChildren: () => import('./send-email/send-email.module') .then(m => m.SendEmailModule)
   }
 ]
 
@@ -47,15 +36,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    SendEmailComponent,
-    LoginComponent,
-    HomeComponent,
-    ProfileComponent,
-    RoogleComponent,
-    CommentComponent,
-    InboxComponent,
-    Roogle2Component,
-    ProfileMENUComponent
   ],
   imports: [
     BrowserModule,

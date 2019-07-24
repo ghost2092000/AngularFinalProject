@@ -1,19 +1,18 @@
 import{NgModule } from '@angular/core';
 import{RouterModule, Routes } from '@angular/router';
 import{CommonModule } from '@angular/common';
-import{LoginComponent} from './login.component';
-import { RoogleComponent } from '../roogle/roogle.component';
-import { ReactiveFormsModule} from '@angular/forms';
+import{Roogle2Component} from './roogle2.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
 const routes: Routes = [
     {
         path: '',
-        component: LoginComponent,
+        component: Roogle2Component,
         data:
         {
-            title: 'Log In!'
+            title: 'Roogle'
         } 
     }
 
@@ -21,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [LoginComponent   , RoogleComponent
+    declarations: [Roogle2Component   
     ],
     imports: [
     CommonModule,
@@ -30,4 +29,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class LoginModule{}
+export class Roogle2Module{}

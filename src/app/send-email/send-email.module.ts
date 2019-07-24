@@ -1,8 +1,7 @@
 import{NgModule } from '@angular/core';
 import{RouterModule, Routes } from '@angular/router';
 import{CommonModule } from '@angular/common';
-import{LoginComponent} from './login.component';
-import { RoogleComponent } from '../roogle/roogle.component';
+import{SendEmailComponent} from './send-email.component';
 import { ReactiveFormsModule} from '@angular/forms';
 
 
@@ -10,10 +9,10 @@ import { ReactiveFormsModule} from '@angular/forms';
 const routes: Routes = [
     {
         path: '',
-        component: LoginComponent,
+        component: SendEmailComponent,
         data:
         {
-            title: 'Log In!'
+            title: 'Email'
         } 
     }
 
@@ -21,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [LoginComponent   , RoogleComponent
+    declarations: [SendEmailComponent   
     ],
     imports: [
     CommonModule,
@@ -30,4 +29,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class LoginModule{}
+export class SendEmailModule{}
