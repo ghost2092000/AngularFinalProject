@@ -6,7 +6,7 @@ import {Routes, RouterModule} from '@angular/router'
 import { AppComponent } from './app.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+// import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RoogleComponent } from './roogle/roogle.component';
@@ -21,10 +21,8 @@ const routes: Routes = [
       title: 'Home page!'
     } 
   },
-  {path:'SignUp', component: SignUpComponent,
-    data:{
-      title: 'Log in HERE'
-    }
+  {path:'SignUp',   
+  loadChildren: () => import('./sign-up/sign-up.module') .then(m => m.SignUpModule)
   },
   {path:'Login', component: LoginComponent},
   {path:'Profile', component: ProfileComponent,
@@ -51,7 +49,6 @@ const routes: Routes = [
     AppComponent,
     SendEmailComponent,
     LoginComponent,
-    SignUpComponent,
     HomeComponent,
     ProfileComponent,
     RoogleComponent,
